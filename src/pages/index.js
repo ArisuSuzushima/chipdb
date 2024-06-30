@@ -1,118 +1,112 @@
 import Image from "next/image";
-import { Inter } from "next/font/google";
+import {Inter, Rubik} from "next/font/google";
+import {Button, Link, Navbar, NavbarBrand, NavbarContent, NavbarItem} from "@nextui-org/react";
+import React from "react";
 
 const inter = Inter({ subsets: ["latin"] });
+const rubik = Rubik({ subsets: ["latin"] });
 
 export default function Home() {
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
+      className={`flex min-h-screen flex-col justify-between p-0 ${rubik.className}`}
     >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+      <Navbar>
+        <NavbarBrand className={`gap-1`}>
+          <svg className={`h-10 w-10`} viewBox="0 0 277.000000 277.000000" preserveAspectRatio="xMidYMid meet">
+            <g transform="translate(0.000000,277.000000) scale(0.100000,-0.100000)" fill="#000" stroke="none">
+              <path d="M10 2008 c0 -801 2 -830 50 -1004 131 -467 516 -841 989 -959 478 -119 963 16 1312 364 267 267 402 595 402 971 0 170 -18 288 -69 440 -71 213 -184 390 -354 553 -158 153 -317 251 -511 314 -209 69 -164 66 -1031 70 l-788 4 0 -753z" />
+            </g>
+          </svg>
+          <span className={`text-black font-bold uppercase`}>
+              Suiteki
+              <br />
+              Industries
+            </span>
+        </NavbarBrand>
+        <NavbarContent className="hidden sm:flex gap-4" justify="center">
+          <NavbarItem>
+            <Link color="foreground" href="#">
+              Features
+            </Link>
+          </NavbarItem>
+          <NavbarItem isActive>
+            <Link href="#" aria-current="page">
+              Customers
+            </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Link color="foreground" href="#">
+              Integrations
+            </Link>
+          </NavbarItem>
+        </NavbarContent>
+        <NavbarContent justify="end">
+          <NavbarItem className="hidden lg:flex">
+            <Link href="https://github.com/ArisuSuzushima/chipdb">
+                <svg alt="GitHub" className="h-6 w-6" fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.1.82-.3.82-.6 0-.3-.01-1.1-.015-2.15-3.338.725-4.042-1.613-4.042-1.613-.546-1.387-1.332-1.756-1.332-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.838 1.238 1.838 1.238 1.07 1.834 2.808 1.304 3.495.995.108-.776.42-1.304.76-1.604-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.3-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.876.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.435.36.81 1.096.81 2.22 0 1.605-.015 2.895-.015 3.285 0 .3.21.71.825.59C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/>
+                </svg>
+                </Link>
+          </NavbarItem>
+          <NavbarItem>
+            <Button color="primary">
+                Get Started
+                </Button>
+          </NavbarItem>
+        </NavbarContent>
+      </Navbar>
+        <div className={`flex flex-col items-center justify-center gap-4 p-4`}>
+            <h1 className={`text-4xl font-bold text-center`}>
+            欢迎使用 ChipDB
+            </h1>
+            <p className={`text-center`}>
+            ChipDB 是一个自由、开源的芯片数据库，旨在为芯片设计者提供一个方便的查询工具。
+            </p>
+            <p className={`text-center`}>
+            本项目基于 GNU Affero General Public License v3.0 开源，您可以在 GitHub 上查看源代码。
+            </p>
+            <p className={`text-center`}>
+                我们目前支持：
+                <ol className={`list-decimal`}>
+                    <li>通过芯片丝印/部件号查询芯片</li>
+                    <li>通过芯片型号查询芯片</li>
+                    <li>通过芯片厂商查询芯片</li>
+                    <li>通过芯片类型查询芯片</li>
+                    <li>通过芯片封装查询芯片</li>
+                    <li>通过以上的方法获取芯片的详细信息</li>
+                </ol>
+            </p>
+            <p className={`text-center`}>
+                未来我们将支持更多功能，敬请期待。
+            </p>
+            <div id="footer" className={`flex flex-col items-center justify-center gap-4 w-full pt-36`}>
+                <p className={`text-center`}>
+                    本项目由
+                    <a href="https://github.com/ArisuSuzushima" className={`text-blue-500`}>
+                        AkiChan
+                    </a>
+                    独立业余开发，如有任何问题请联系我。
+                </p>
+                <div className={`flex gap-1 justify-center items-center`}>
+                    <svg className={`h-10 w-10`} viewBox="0 0 277.000000 277.000000" preserveAspectRatio="xMidYMid meet">
+                        <g transform="translate(0.000000,277.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+                            <path d="M10 2008 c0 -801 2 -830 50 -1004 131 -467 516 -841 989 -959 478 -119 963 16 1312 364 267 267 402 595 402 971 0 170 -18 288 -69 440 -71 213 -184 390 -354 553 -158 153 -317 251 -511 314 -209 69 -164 66 -1031 70 l-788 4 0 -753z" />
+                        </g>
+                    </svg>
+                    <span className={`text-black font-bold uppercase`}>
+              Suiteki
+              <br />
+              Industries
+            </span>
+                </div>
+                <p className={`text-center`}>
+                    <Link href="mailto:arisu@ieee.org" className={`text-blue-500`}>
+                        arisu@ieee.org
+                    </Link>
+                </p>
+            </div>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
     </main>
   );
 }
