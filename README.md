@@ -1,40 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ChipDB
 
-## Getting Started
+---
 
-First, run the development server:
+## 摘要
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+ChipDB 是一个开源自由的芯片数据库，旨在为芯片设计者提供一个方便的芯片查询工具。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 特性
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- 支持芯片型号、厂商、描述等多种查询方式
+- 支持芯片参数、引脚、功能等详细信息查询
+- 支持芯片的相关文档、资料等下载
+- 支持芯片的相关项目、案例等查询
+- 支持芯片的相关开发工具、软件等查询
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## 授权
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+ChipDB 是一个开源自由的项目，遵循 GNU Affero General Public License v3.0 协议。
